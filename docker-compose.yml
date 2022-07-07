@@ -1,0 +1,18 @@
+version: "3.2"
+
+services:
+  cdn:
+    image:
+      cdn:tmp
+    ports:
+      - "8080:8080"
+    volumes:
+      - type: bind
+        source: ./CDN/templates
+        target: /templates
+
+  host:
+    image:
+      host:tmp
+    ports:
+      - "8090:8090"
